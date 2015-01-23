@@ -1,0 +1,25 @@
+extends layout
+block content
+    // header is a block element not inline
+    section
+      #searchArea
+        h1.bigHeader  car search
+        #formHolder
+          form(action='/search/' method='post')
+            br
+            input.inputBox(type='text', name='registrationplate', placeholder='registration plate #')
+            br
+            br
+            input.inputBox(type='text', name='stocknumber', placeholder='stock reference #')
+            input.searchButton(type='submit', value='find pics!')
+    if(nophotos)
+     h1(style='margin-left: 100px;')=nophotos
+    if(photos)
+        .imageContainer
+        each photo in photos
+          .imagediv
+            img(src='#{photo}')
+        #enquire
+          p This car is available on Arnold Clark
+            span(style='font-size: 20px; color: #4977B6;')
+          a#enquireButton(href='http://www.arnoldclark.com/') visit Arnold Clark
