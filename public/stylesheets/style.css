@@ -107,6 +107,10 @@ nav {
   -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
   transform: rotate(-10deg); /* Standard syntax */
 }
+.searchButton:active{
+  background-color: white;
+  color: crimson;
+}
 .bigHeader{
   color: white;;
   font-size: 80px;
