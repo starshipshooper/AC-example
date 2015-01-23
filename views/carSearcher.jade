@@ -4,6 +4,12 @@ block content
     section
       #searchArea
         h1.bigHeader  car search
+        if(photos)
+         h3(style='color: grey; margin-left:23%; max-width: 400px;') found some photos for you below..
+        if(nophotos)
+         h3(style='color: grey; margin-left:23%; max-width: 400px;')=nophotos
+        if(subtitle)
+         h3(style='color: grey; margin-left:23%; max-width: 400px;')=subtitle  
         #formHolder
           form(action='/search/' method='post')
             br
@@ -12,8 +18,6 @@ block content
             br
             input.inputBox(type='text', name='stocknumber', placeholder='stock reference #')
             input.searchButton(type='submit', value='find pics!')
-    if(nophotos)
-     h1(style='margin-left: 100px;')=nophotos
     if(photos)
         .imageContainer
         each photo in photos

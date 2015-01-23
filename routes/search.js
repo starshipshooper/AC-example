@@ -7,7 +7,7 @@ var obfuscate = require('../test/obfsucate');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('carSearcher');
+  res.render('carSearcher', { subtitle: "use the registration plate number and stock reference to find photos of cars"});
 });
 
 var badImage;
